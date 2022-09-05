@@ -27,7 +27,7 @@ const handleError = (err) => {
     return errors;
   }
 
-  //checking for duplication of slug
+  //check for required field while updating
   if (err.message === "empty slug") {
     errors.slug = "Slug is required";
   }
