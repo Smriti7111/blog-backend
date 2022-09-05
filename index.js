@@ -2,7 +2,7 @@ const express = require('express');
 const connectDatabase = require('./database/connection');
 const articleRouter = require('./routes/articleRoutes');
 const cors = require('cors');
-const PORT = 3000;
+const dotenv = require('dotenv').config();
 
 //create server
 const app = express();
@@ -16,6 +16,8 @@ connectDatabase();
 
 //routes
 app.use('/api/articles',articleRouter);
+
+const PORT = process.env.PORT || 3000;
 
 //start server
 app.listen(PORT,() => {
